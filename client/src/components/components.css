@@ -1,0 +1,591 @@
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    /* Base font size (adjust for desired font size increase) */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    /* Use a dark color for primary text */
+    background-color: #f0f0f0;
+    /* Light gray background (maintain this) */
+}
+
+
+/* Layout Styles */
+
+.dashboard-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.dashboard-content {
+    flex: 1;
+    /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 0;
+    background-image: url(background12.jpg);
+    background-size: cover;
+    /* Cover the entire content area */
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Center the background image */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Headings */
+
+.dashboard-content h1,
+.recipe-content h1,
+.inventory-content h1,
+.grocery-content h1 {
+    font-size: 2rem;
+    /* Increased font size (adjust further if needed) */
+    color: #23684f;
+    /* Primary green color */
+    padding: 10px 0;
+}
+
+
+.component-button {
+    background-color: #fafafa;
+    color: #23684f;
+    padding: 18px 30px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
+
+    background-image: linear-gradient(to right, #fafafa, #e6e6e6);
+
+}
+
+.component-button:hover,
+.component-button:focus {
+    background-image: linear-gradient(to right, #e6e6e6, #fafafa);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.component-button.active {
+    transform: scale(0.90);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Slightly more pronounced shadow */
+    background-color: #9b9b9b; /* Subtle color shift for the active button */
+  }
+
+.logout-button {
+    background-color: #d52e1be4;
+    padding: 20px 30px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
+
+}
+
+.logout-button:hover {
+    background-color: #ff1900;
+}
+
+.saveButton {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* Ensures button is centered */
+    margin: 0 auto; /* Centers the button */
+}
+
+/* Sidebar */
+
+.sidebar {
+    background-color: #187b45d5;
+    width: 250px;
+    padding: 20px;
+    
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.sidebar ul li {
+    padding-bottom: 10px;
+}
+
+.sidebar ul li button {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+
+}
+
+.dashboard-link {
+    color: #ffffff; /* Switched to white for better contrast on a new background */
+    text-decoration: none; /* Keeps the underline off */
+    font-weight: bold; /* Retains boldness for emphasis */
+    background-color: #b8394eaa; /* Use the green color as the primary background for better visibility */
+    padding: 12px 24px; /* Slightly increased padding for a larger, more clickable area */
+    border: none; /* Removes border if any was set */
+    border-radius: 8px; /* More pronounced rounded corners for a modern look */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for hover effects */
+    display: inline-block; /* Ensures the padding and border-radius are respected */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+  
+  .dashboard-link:hover, .dashboard-link:focus {
+    transform: translateY(-2px); /* Lifts the button slightly to indicate interactivity */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhances shadow for a "raised" effect */
+    background-color: #b8394e; /* Slightly darker green on hover for feedback */
+  }
+/* User Profile */
+
+.user-profile {
+    background-color: #fff;
+    /* White background */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.profile-sections {
+    display: flex;
+  justify-content: space-between;
+}
+.profile-section {
+    flex: 0 1 48%;
+}
+  
+  .profile-section h3 {
+    margin-bottom: 10px;
+  }
+/* Forms */
+
+input[type="checkbox"],
+select {
+    margin-right: 10px;
+}
+
+.saveButton {
+    display: block;
+    width: 20%;
+    margin-top: 20px;
+}
+
+
+/*Inventory Content Styles */
+
+  
+  .inventory-form {
+    margin-bottom: 20px;
+  }
+  
+  /* Shared Input and Select Styles */
+  .inventory-input, .inventory-select {
+    width: 20%;
+    padding: 10px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  .inventory-input-datepicker, .inventory-select {
+    width: 50%;
+    padding: 10px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .inventory-select {
+    cursor: pointer;
+  }
+  
+  /* Styling for DatePicker to match other inputs */
+  .DatePicker__input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Button Styles */
+  .inventory-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin: 10px 0;
+  }
+  
+  .inventory-button:hover {
+    background-color: #367C39;
+  }
+  
+  /* Inventory List Styles */
+  .inventory-list h3 {
+    color: #080808;
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .item {
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: grid;
+	grid-template-columns: 5fr 1fr 1.5fr;
+	column-gap: 15vw;
+  }
+  
+  .item button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+    font-size: 0.875rem; /* Ensures text size consistency across buttons */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds depth */
+  }
+  
+  .item button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhances shadow for a "lifted" effect */
+  }
+  
+  /* Specific style for 'Add to Grocery List' button */
+  .item button.AddtoGroceryList {
+    background-color: #4CAF50; /* Vibrant green background for positive action */
+    /* Inherits color, border, border-radius, padding, cursor, transition from .item button */
+  }
+  
+  .item button.AddtoGroceryList:hover {
+    background-color: #367C39; /* Darker green on hover for interactive feedback */
+  }
+  
+  
+  .item.good {
+    background-color: #99f077;
+  }
+  
+  .item.soon-to-expire {
+    background-color: #ffffc5;
+  }
+  
+  .item.expired {
+    background-color: #f5c2c2;
+  }
+
+
+  /* Dashboard and Grocery Content Styles */
+.grocery-content {
+    background-color: #f8f9fa; /* Light background to ensure readability */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading Style */
+.grocery-content h1 {
+    color: #23684f; /* Consistent theme color */
+    margin-bottom: 20px; /* Spacing between the heading and the list */
+  }
+  
+  /* List Styling */
+.grocery-content ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0;
+  }
+  
+  .dashboard-content.grocery-content li {
+    background-color: #ffffff; /* Clear distinction for each list item */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px; /* Spacing between list items */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+ .grocery-content li {
+	display: grid !important;
+	grid-template-columns: 3fr 4fr 0.5fr 0.5fr 0.5fr;
+	column-gap: 8vw;
+ }
+  
+.grocery-content li div {
+    margin: 0 10px; /* Spacing around the text for readability */
+  }
+  
+  /* Button Styling */
+.grocery-content button {
+    background-color: #4CAF50; /* Theme color for action buttons */
+    color: white; /* Contrast for readability */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding for clickability */
+    cursor: pointer; /* Indicate action */
+    transition: background-color 0.2s; /* Smooth transition for interaction */
+  }
+  
+.grocery-content button:hover {
+    background-color: #367C39; /* Darker shade on hover for feedback */
+  }
+  
+.grocery-content button:last-child {
+    background-color: #ff6b6b; /* Red color for delete action */
+  }
+  
+.grocery-content button:last-child:hover {
+    background-color: #cc5656; /* Darker red on hover */
+  }
+  
+ 
+/* RECIPES - DO NOT CHANGE */
+
+.recipe-content img {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.recipe-content a {
+    font-size: 0.75vw;
+}
+
+.card-deck {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 85vw;
+    max-height: 70vh;
+}
+
+.card {
+    margin: 1vh;
+    background-color: #E8E8E8 !important;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-height: 35vh;
+    padding: 0.5vh;
+    flex-shrink: 1;
+}
+
+.card img {
+    max-height: 40%;
+    max-width: 38%;
+    padding: 0.5vh;
+}
+
+.card .card-body {
+    align-items: left;
+    height: 50%;
+    padding: 0.5vh;
+}
+
+.card .card-body h5 {
+    font-size: 1.75vh;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.card .card-body h6 {
+    font-size: 1.75vh;
+    padding-left: 0.2vw;
+}
+
+.card .card-body ul {
+    margin-bottom: 0.25vh;
+}
+
+.card .card-body li {
+    font-size: 1.5vh;
+}
+
+.card .card-body .card-buttons {
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr;
+    text-align: left;
+    max-height: 5vh;
+}
+
+.card .card-body img {
+    text-align: left;
+    max-height: 4vh;
+    max-width: 4vw;
+}
+
+.card .card-body .bi-plus {
+    color: black;
+    font-size: 3vh;
+    cursor: pointer;
+}
+
+.card .card-body .bi-heart {
+    color: red;
+    font-size: 3vh;
+    cursor: pointer;
+    padding-left: 2vh;
+}
+
+.card .card-body .bi-heart-fill {
+    color: red;
+    font-size: 3vh;
+    cursor: pointer;
+    padding-left: 2vh;
+}
+
+.pagination {
+    padding-top: 1vh;
+    grid-column: 2/4;
+    margin-bottom: 1vh;
+}
+
+.page-link {
+    background-color: white !important;
+    color: black !important;
+    border-color: #E8E8E8 !important;
+}
+
+.page-item .disabled {
+    background-color: grey !important;
+}
+
+.page-link,
+.page-link:hover {
+    color: #204C19;
+}
+
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    width: 400px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.modal-header {
+    background-color: #F0F0F0;
+    max-width: 100%;
+    height: 2.25rem;
+}
+
+.modal-title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.btn.btn--close {
+    position: absolute;
+    right: 0.75vw;
+    top: -1vh;
+    padding: 0px;
+    font-size: 1.75rem;
+    color: black;
+    background-color: transparent;
+}
+
+.btn.btn--close:hover {
+    background-color: transparent;
+}
+
+.modal-body {
+    position: relative;
+    background-color: #F0F0F0;
+    padding: 1rem;
+    max-width: 100%;
+    text-align: center;
+}
+
+.modal-body img {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    max-width: 250px;
+    max-height: 350px;
+}
+
+.modal-body h4 {
+    text-align: left;
+    border-radius: 0.5rem;
+    color: black;
+    text-align: center;
+    padding-top: 0rem;
+}
+
+.modal-body h5 {
+    text-align: left;
+    color: black;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.modal-body a {
+    text-align: center;
+    color: blue;
+    font-size: 2.5vh;
+}
+
+.modal-body ul {
+    text-align: left;
+    padding-left: 2.25rem;
+    border-radius: 0.5rem;
+    color: black;
+    columns: 2;
+}
+
+.modal-overlay {
+    z-index: 40;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
